@@ -8,7 +8,9 @@ final int INTRO = 0;
 final int GAME = 1;
 final int GAMEOVER = 2;
 final int PAUSE = 3;
-
+//map
+PImage map;
+color nRoom, eRoom, sRoom, wRoom;
 //colors
 color peach = #FFC061;
 color gold = #EAA222;
