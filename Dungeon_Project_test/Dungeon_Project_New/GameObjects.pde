@@ -4,7 +4,6 @@ class GameObjects {
   PVector vel;
   int lives;
   int size;
-  color = c;
 
   void show() {
   }

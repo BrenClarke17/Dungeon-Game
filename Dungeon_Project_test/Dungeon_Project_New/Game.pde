@@ -3,6 +3,7 @@ void game() {
   drawGameObjects();
   drawdarkness();
   drawmap();
+
 }
 
 void drawRoom() {
@@ -80,6 +81,11 @@ void drawmap() {
   fill(255, 0, 0);
   square(myhero.roomX*s, myhero.roomY*s, s);
 }
+
+
+
+
+
 
 void gameclicks() {
 }

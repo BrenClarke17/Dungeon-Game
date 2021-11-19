@@ -1,5 +1,6 @@
 class Enemy extends GameObjects {
-
+float r = random(0, 1); 
+  
   Enemy() {
     loc = new PVector (width/2, height/2);
     vel = new PVector (0, 0);
@@ -8,7 +9,7 @@ class Enemy extends GameObjects {
     roomY = 1;
     size = 50;
   }
-  
+
   Enemy(int x, int y) {
     loc = new PVector (width/2, height/2);
     vel = new PVector (0, 0);
@@ -17,7 +18,7 @@ class Enemy extends GameObjects {
     roomY = y;
     size = 50;
   }
-  
+
 
   Enemy(int hp, int s, int x, int y) {
     loc = new PVector (width/2, height/2);
@@ -47,13 +48,16 @@ class Enemy extends GameObjects {
         if (icw(myObj)) {
           lives = lives -int (myObj.vel.mag());
           myObj.lives = 0;
+          if (lives <= 0 && r > 0.5) {
+            myObjects.add(new DroppedItem(loc.x, loc.y, roomX, roomY));
+          } 
         }
       }
       i++;
     }
 
-if (lives <= 0) {
-mode = GAMEOVER;
-}  
-}
+    //if (lives <= 0) {
+      //mode = GAMEOVER;
+    //}
+  }
 }

@@ -91,11 +91,24 @@ class hero extends GameObjects {
         GameObjects myObj = myObjects.get(i);
         if (myObj instanceof Enemy && icw(myObj)) {
           lives--;
-        imtimer = 120;
+          imtimer = 120;
+        }
+        if (myObj instanceof DroppedItem && icw(myObj)) {
+          DroppedItem item = (DroppedItem) myObj;
+          if (item.type == GUN) {
+            myWeapon = item.w;
+            item.lives = 0;
+          }
+          if (item.type == HEALTH) {
+            myWeapon = item.w;
+            item.lives = 0;
+            if (lives < 5) {
+            lives++;
+            }
+          }
+        }
+        i++;
       }
-      i++;
     }
   }
-}
-
 }
